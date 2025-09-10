@@ -18,7 +18,7 @@ namespace Tailspin96.SmoothGridLayout
 
         private void Update()
         {
-            if (_rectTransform == null) return;
+            if (_rectTransform == null || cloneTransform == null) return;
 
             if (cloneTransform.position.sqrMagnitude < 0.01f) return;
             transform.position = Vector3.SmoothDamp(transform.position, cloneTransform.position, ref velocity, 1f / smoothLayout.MoveSpeed);
